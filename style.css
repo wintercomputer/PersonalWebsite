@@ -1,0 +1,247 @@
+:root
+{    
+    /*size*/
+    --card-width: 60vw;
+    --card-ratio: 1.75;
+
+    /*colours*/
+    --card-background-light: #d1d5d6;
+    --card-background-dark: #1a2b34;
+
+    /*font*/
+    --font: 'Montserrat', sans-serif;
+}
+
+
+body
+{
+    padding: 0;
+    margin: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+
+main
+{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    align-items: center;
+
+    font-family: var(--font);
+}
+
+
+.card
+{
+    height: calc(var(--card-width)/var(--card-ratio));
+    width: var(--card-width);
+
+    position: relative;
+}
+
+
+#card-side-1, #card-side-2
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/*Pierwsza strona wizytówki*/
+#card-side-1
+{
+    background-color: var(--card-background-dark);
+
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+}
+
+
+/*profilowe*/
+.profile-picture
+{
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.profile-picture img
+{
+    height: 50%;
+}
+
+
+/*Tekst*/
+.short-info
+{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10px;
+    width: 50%;
+}
+
+
+.short-info h2, .about-me h2, .contact h2
+{
+    font-weight: 800;
+    font-size: 3vw;
+
+    text-align: center;
+}
+
+
+.short-info p, .about-me p
+{
+    font-weight: 100;
+    font-size: 1.5vw;
+}
+
+
+/*Druga strona wizytówki*/
+#card-side-2
+{
+    background-color: var(--card-background-light);
+
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Porfolio */
+.about-me
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+}
+
+
+.about-me .portfolio
+{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    gap: 25px;
+
+    width: calc(var(--card-width)/2.5);
+    height: calc(var(--card-width)/2.5);
+}
+
+
+.about-me .portfolio a
+{
+    background-color: var(--card-background-dark);
+    transition: all 0.5s;
+}
+
+
+.about-me .portfolio a:hover
+{
+    transform: scale(1.125);
+    
+}
+
+
+.contact
+{
+    width: 50%;
+}
+
+
+/* Lista */
+.contact ul
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+
+    text-decoration: none;
+    list-style: none;
+    padding: 25px;
+
+    height: calc(var(--card-width)/2.8);
+}
+
+
+.contact ul li
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.contact ul span
+{
+    font-weight: 100;
+    font-size: 1.5vw;
+    padding: 15px;
+}
+
+
+.contact ul img
+{
+    height: 2vw;
+}
+
+
+/* Zmiana karty */
+
+#card-side-1:target
+{
+    display: flex;
+}
+
+#card-side-1:target ~ #card-side-2
+{
+    display: none;
+}
+
+
+#card-side-2:target
+{
+    display: flex;
+}
+
+#card-side-2:target ~ #card-side-1
+{
+    display: none;
+}
+
+.move-control
+{
+    width: var(--card-width);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    position: absolute;
+    bottom: 0;
+}
+
+.move-control a svg
+{
+    height: 48px;
+}
