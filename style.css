@@ -65,6 +65,9 @@ main
     flex-direction: row;
 
     color: white;
+
+    box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    border-radius: 20px;
 }
 
 
@@ -84,6 +87,7 @@ main
 .profile-picture img
 {
     height: 50%;
+    border-radius: 10000px;
 }
 
 
@@ -93,12 +97,16 @@ main
     display: flex;
     flex-direction: column;
 
-    margin: 10px;
     width: 50%;
 }
 
+.short-info h2
+{
+    font-weight: 800;
+    font-size: 3vw;
+}
 
-.short-info h2, .about-me h2, .contact h2
+.about-me h2, .contact h2
 {
     font-weight: 800;
     font-size: 3vw;
@@ -119,8 +127,11 @@ main
 {
     background-color: var(--card-background-light);
 
-    display: flex;
+    display: none;
     flex-direction: row;
+
+    box-shadow: 8px 8px 25px 0px rgba(66, 68, 90, 1);
+    border-radius: 20px;
 }
 
 
